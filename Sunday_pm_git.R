@@ -4,4 +4,14 @@
 #Apr 19th 2015
 
 # read in data as tab-delimited
-gap.in <- read.table("output/combined_gapMinder.tsv", sep="\t")
+gap.in <- read.table("output/combined_gapMinder.tsv", sep="\t", header="TRUE")
+
+for (number in 1:10){
+  print (gap.in[number,])
+}
+
+add.me<-function(x,y){
+  x+y
+}
+
+add.me(3,4)
