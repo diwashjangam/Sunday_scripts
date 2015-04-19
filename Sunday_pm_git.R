@@ -3,15 +3,12 @@
 # #diwash.jangam@mavs.uta.edu
 #Apr 19th 2015
 
+#Install packages
+install.packages("dplyr", dependencies=TRUE)
+
+#first you need to load after you install, this line needs to be here.
+library("dplyr")
+
 # read in data as tab-delimited
-gap.in <- read.table("output/combined_gapMinder.tsv", sep="\t", header="TRUE")
+gap.in <- read.table("output/combined_gapMinder.tsv", sep="\t", header=TRUE)
 
-for (number in 1:10){
-  print (gap.in[number,])
-}
-
-add.me<-function(x,y){
-  x+y
-}
-
-add.me(3,4)
