@@ -1,0 +1,26 @@
+---
+title: "final ws"
+author: "diwash"
+date: "Sunday, April 19, 2015"
+output: html_document
+---
+
+Final project of the Workshop in which I had to filter out the population of Nepal, Spain and Iran and plot them on a figure. This is awesome **:) :) :)**
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+library("dplyr")
+gap.in <- read.table("output/combined_gapMinder.tsv", sep="\t", header=TRUE)
+gap.in %>%
+filter(country=="Spain") -> Spain
+plot(Spain$year,Spain$pop, main="population change over time of Spain", col="red", xlab="year", ylab="population")
+
+gap.in %>%
+filter(country=="Nepal") -> Nepal
+plot(Nepal$year,Nepal$pop, main="population change over time of Nepal", col="blue", xlab="year", ylab="population")
+
+gap.in %>%
+filter(country=="Iran") -> Iran
+plot(Iran$year,Iran$pop, main="population change over time of Iran", col="green", xlab="year", ylab="population")
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
